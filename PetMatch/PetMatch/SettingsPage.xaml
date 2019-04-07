@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMatch.SettingsPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Margin="20">
+            <Label Text="Username" TextDecorations="Underline"  />
+            <Entry x:Name="usernameSetting"
+            Placeholder="Username"/>
+
+            <Label Text="Email" TextDecorations="Underline"  />
+            <Entry x:Name="emailSetting"
+            Placeholder="Email"
+               Keyboard="Email"/>
+
+            <Label Text="Password" TextDecorations="Underline"  />
+            <Entry x:Name="PasswordSetting"
+            Placeholder="Password"
+            IsPassword="True"/>
+
+            <Label Text="Pet Name" TextDecorations="Underline"  />
+            <Entry x:Name="petnameSetting"
+            Placeholder="Pet Name"/>
+
+            <Label Text="Pet Age" TextDecorations="Underline"  />
+            <Entry x:Name="petageSetting"
+            Placeholder="Pet Age"/>
+
+            <Label Text="Pet Gender" TextDecorations="Underline"  />
+            <Entry x:Name="petgenderSetting"
+            Placeholder="Pet Gender"/>
+
+            <Label Text="Pet Breed" TextDecorations="Underline"  />
+            <Entry x:Name="petbreedSetting"
+            Placeholder="Pet Breed"/>
+
+            <Button x:Name="SettingsButton"
+                Margin="0,10,0,0"
+                Text="Change Settings"
+                Clicked= "SettingsButton_Clicked"/>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

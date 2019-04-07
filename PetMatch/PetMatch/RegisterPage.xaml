@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMatch.RegisterPage">
+    <ContentPage.Content>
+        
+        <StackLayout 
+                Margin="20"
+                VerticalOptions="Center" >
+
+            <Entry x:Name="usernameEntry"
+               Placeholder="Username"/>
+            <Entry x:Name="emailEntry"
+               Placeholder="Email address"
+               Keyboard="Email" />
+            <Entry x:Name="passwordEntry"
+               Placeholder="Password"
+               IsPassword="True"/>
+            <Entry x:Name="petNameEntry"
+               Placeholder="Pet Name"  />
+            <Entry x:Name="petAgeEntry"
+               Placeholder="Pet Age" />
+            <Entry x:Name="petGenderEntry"
+               Placeholder="Pet Gender"  />
+            <Entry x:Name="petBreedEntry"
+               Placeholder="Pet Breed"/>
+            <Button x:Name="RegisterationButton"
+                    Text="REGISTER"
+                    Clicked="RegisterationButton_Clicked"/>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

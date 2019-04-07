@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMatch.HomePage">
+    <ContentPage.Content>
+        <StackLayout Margin="20"  VerticalOptions="Center" >
+
+            <Entry x:Name="usernameEntry"
+               Placeholder="Username"/>
+
+            <Button x:Name="PetBreedingPageButton"
+                Margin="0,10,0,0"
+                Text="Pet Breeding"
+                Clicked="PetBreedingPageButton_Clicked"/>
+
+            <Button x:Name="SignUpButton"
+                Margin="0,10,0,0"
+                Text="REGISTER"
+                Clicked= "SignUpButton_Clicked"/>
+
+
+
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
