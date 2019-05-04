@@ -148,12 +148,15 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Mobile.Client">
+      <Version>4.1.1</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\PetMatch\PetMatch.csproj">
-      <Project>{165FF9EE-1E75-489E-8998-3B6271F58F5F}</Project>
+      <Project>{DD80B2B8-9004-4FEF-B09A-6D447AC60511}</Project>
       <Name>PetMatch</Name>
     </ProjectReference>
   </ItemGroup>

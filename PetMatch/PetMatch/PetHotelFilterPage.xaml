@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMatch.PetHotelFilterPage">
+    <ContentPage.Content>
+        <StackLayout  VerticalOptions="Center">
+            
+
+            <Picker x:Name="HotelCityPicker" Title="Select City" Margin="10"/>
+            <Picker x:Name="HotelPricePicker" Title="Select Price Range" Margin="10"/>
+            <Button x:Name="filterPetHotelButton"
+                    Text="Filter"
+                    Clicked="FilterPetHotelButton_Clicked"/>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

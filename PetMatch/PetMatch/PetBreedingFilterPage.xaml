@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMatch.PetBreedingFilterPage">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+      
+            <Picker x:Name="PetFilterBreedPicker" Title="Select Breed"/>
+            <Picker x:Name="PetFilterCityPicker" Title="Select City"/>
+            <Picker x:Name="PetFilterGenderPicker" Title="Select Gender"/>
+            
+            <Button x:Name="filterPetButton"
+                    Text="Filter"
+                    Clicked="FilterPetButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

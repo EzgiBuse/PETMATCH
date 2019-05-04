@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Microsoft.WindowsAzure.MobileServices;
 using UIKit;
 
 namespace PetMatch.iOS
@@ -24,6 +25,7 @@ namespace PetMatch.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+            CurrentPlatform.Init();
 
             return base.FinishedLaunching(app, options);
         }

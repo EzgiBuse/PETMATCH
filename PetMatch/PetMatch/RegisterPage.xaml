@@ -3,33 +3,41 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PetMatch.RegisterPage">
     <ContentPage.Content>
-        
+        <ScrollView>
         <StackLayout 
-                Margin="20"
-                VerticalOptions="Center" >
+            
+            Margin="20"
+                VerticalOptions="StartAndExpand" >
 
-            <Entry x:Name="usernameEntry"
-               Placeholder="Username"/>
-            <Entry x:Name="emailEntry"
-               Placeholder="Email address"
-               Keyboard="Email" />
-            <Entry x:Name="passwordEntry"
-               Placeholder="Password"
-               IsPassword="True"/>
-            <Entry x:Name="petNameEntry"
-               Placeholder="Pet Name"  />
-            <Entry x:Name="petAgeEntry"
-               Placeholder="Pet Age" />
-            <Entry x:Name="petGenderEntry"
-               Placeholder="Pet Gender"  />
-            <Entry x:Name="petBreedEntry"
-               Placeholder="Pet Breed"/>
+                
+                    <Entry x:Name="usernameEntry"
+                   Placeholder="Username"/>
+                <Entry x:Name="emailEntry"
+                   Placeholder="Email address"
+                   Keyboard="Email" />
+                <Entry x:Name="passwordEntry"
+                   Placeholder="Password"
+                   IsPassword="True"/>
+                <Entry x:Name="confirmPasswordEntry"
+                   Placeholder="Confirm Password"
+                   IsPassword="True"/>
+                <Entry x:Name="phoneEntry"
+                   Placeholder="Phone Number"/>
+                <Entry x:Name="petNameEntry"
+                   Placeholder="Pet Name"  />
+
+            <Picker x:Name="RegisterPetAgePicker" Title="Select Pet Age"/>
+            <Picker x:Name="RegisterPetGenderPicker" Title="Select Pet Gender"/>
+            <Picker x:Name="RegisterPetBreedPicker" Title="Select Pet Breed"/>
+            <Picker x:Name="RegisterCityPicker" Title="Select City"/>
+
             <Button x:Name="RegisterationButton"
                     Text="REGISTER"
                     Clicked="RegisterationButton_Clicked"/>
 
 
-
+            
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

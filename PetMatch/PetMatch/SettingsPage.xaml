@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PetMatch.SettingsPage">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout VerticalOptions="Center" Margin="20">
             <Label Text="Username" TextDecorations="Underline"  />
             <Entry x:Name="usernameSetting"
@@ -42,5 +43,6 @@
 
 
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

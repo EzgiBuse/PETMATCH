@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace PetMatch
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LoginPage : ContentPage
+	public partial class HomePage : ContentPage
 	{
-		public LoginPage ()
+		public HomePage ()
 		{
 			InitializeComponent ();
 		}
-
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
-        }
-    }
+	}
 }

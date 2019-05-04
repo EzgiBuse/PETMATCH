@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetMatch.Android", "PetMatc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetMatch.iOS", "PetMatch\PetMatch.iOS\PetMatch.iOS.csproj", "{11385E5E-46D1-4D5F-AD23-098EAA631C73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetMatch", "PetMatch\PetMatch\PetMatch.csproj", "{DD80B2B8-9004-4FEF-B09A-6D447AC60511}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetMatch", "PetMatch\PetMatch\PetMatch.csproj", "{DD80B2B8-9004-4FEF-B09A-6D447AC60511}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

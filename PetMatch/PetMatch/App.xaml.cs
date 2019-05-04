@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.WindowsAzure.MobileServices;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,11 +8,22 @@ namespace PetMatch
 {
     public partial class App : Application
     {
+
+        public static MobileServiceClient MobileService =
+   new MobileServiceClient(
+   "https://petmatch.azurewebsites.net"
+
+);
+
+
+
         public App()
         {
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage());
+            
+
         }
 
        
