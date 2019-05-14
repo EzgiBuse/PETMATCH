@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetMatch.HotelListViewPage"
+              BackgroundColor="White">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Name="ReturnButton" Icon="leftbutton.png"  Clicked="ReturnButton_Clicked"  />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+
+        <ListView x:Name="HotelListView"
+            HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <Grid BackgroundColor="White"
+                                HeightRequest="10"/>
+                            <StackLayout Orientation="Vertical"
+                                      Padding="0"
+                                      BackgroundColor="LightBlue">
+
+                                <Label  Text="{Binding PethotelName, StringFormat='Hotel Name : {0:N}'}"
+                                    Font="Medium"
+                                        TextColor="Black"/>
+                                <Label  Text="{Binding PethotelDailyprice,StringFormat='Daily Price : {0:N} TL'}"
+                                    Font="Medium"
+                                        TextColor="Black"/>
+                                <Label  Text="{Binding PethotelPhone, StringFormat='Hotel Phone : {0:N}'}"
+                                    Font="Medium"
+                                        TextColor="Black"/>
+                                <Label  Text="{Binding PethotelLocation,StringFormat='Hotel City : {0:N}'}"
+                                    Font="Medium"
+                                        TextColor="Black"/>
+                                <Label  Text="{Binding PethotelDistrict, StringFormat='Hotel District : {0:N}'}"
+                                    Font="Medium"
+                                        TextColor="Black"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </ContentPage.Content>
+</ContentPage>

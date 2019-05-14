@@ -5,37 +5,33 @@
     <ContentPage.Content>
         <ScrollView>
         <StackLayout VerticalOptions="Center" Margin="20">
-            <Label Text="Username" TextDecorations="Underline"  />
+            
             <Entry x:Name="usernameSetting"
             Placeholder="Username"/>
 
-            <Label Text="Email" TextDecorations="Underline"  />
             <Entry x:Name="emailSetting"
             Placeholder="Email"
                Keyboard="Email"/>
 
-            <Label Text="Password" TextDecorations="Underline"  />
             <Entry x:Name="PasswordSetting"
             Placeholder="Password"
             IsPassword="True"/>
 
-            <Label Text="Pet Name" TextDecorations="Underline"  />
+                <Picker x:Name="RegisterCityPicker" Title="Select City"/>
+
+                <Entry x:Name="userphonesetting"
+            Placeholder="Phone number"/>
+
+            
             <Entry x:Name="petnameSetting"
             Placeholder="Pet Name"/>
 
-            <Label Text="Pet Age" TextDecorations="Underline"  />
-            <Entry x:Name="petageSetting"
-            Placeholder="Pet Age"/>
+                <Picker x:Name="RegisterPetAgePicker" Title="Select Pet Age"/>
+                <Picker x:Name="RegisterPetGenderPicker" Title="Select Pet Gender"/>
+                <Picker x:Name="RegisterPetBreedPicker" Title="Select Pet Breed"/>
+               
 
-            <Label Text="Pet Gender" TextDecorations="Underline"  />
-            <Entry x:Name="petgenderSetting"
-            Placeholder="Pet Gender"/>
-
-            <Label Text="Pet Breed" TextDecorations="Underline"  />
-            <Entry x:Name="petbreedSetting"
-            Placeholder="Pet Breed"/>
-
-            <Button x:Name="SettingsButton"
+                <Button x:Name="SettingsButton"
                 Margin="0,10,0,0"
                 Text="Change Settings"
                 Clicked= "SettingsButton_Clicked"/>

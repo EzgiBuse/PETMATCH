@@ -4,9 +4,9 @@
              xmlns:local="clr-namespace:PetMatch"
             x:Class="PetMatch.TabControlPage">
 
-    <local:HomePage   Icon="homepage.png" />
+    <local:HomePage   Title="Homepage" />
     <local:PetBreedingFilterPage  Title="Pet Filter" />
     <local:PetHotelFilterPage  Title="Hotel Filter" />
-    <local:SettingsPage   Title="Settings" />
+    <local:SettingsPage   Title="Set Info"/>
 
 </TabbedPage>

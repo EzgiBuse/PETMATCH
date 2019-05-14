@@ -1,6 +1,7 @@
 ﻿using PetMatch.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace PetMatch
 
         List<String> listRegisterBreed = new List<String>();
         List<String> listRegisterGender = new List<String>();
-        private int UserID;
+        
 
         public RegisterPage ()
 		{
@@ -257,35 +258,29 @@ namespace PetMatch
        private async void RegisterationButton_Clicked (object sender, EventArgs e)
         {
 
+            string connectionString;
+            SqlConnection cnn;
+           
+           
+            //sql = "select * from dbo.USERPET where Email= '" + emailEntry.Text.Trim() + "' and Password = '" + passwordEntry.Text.Trim() + "'";
+            connectionString = @"Data Source=petmatch.database.windows.net,1433;Initial Catalog=PetMatch_Database;User ID=PETMATCHADMIN;Password=EzgiDilara97";
+
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
             
-
-            if (passwordEntry.Text == confirmPasswordEntry.Text)
-            {
-
-
-                USERPET user = new USERPET()
-                {
-                   
-                    Username = usernameEntry.Text,
-                    Password = passwordEntry.Text,
-                    Email = emailEntry.Text,
-                    Phone = phoneEntry.Text,
-                    UserLocation = RegisterCityPicker.ToString(),
-                    Petname = petNameEntry.Text,
-                    Petbreed = RegisterPetBreedPicker.ToString(),
-                    Petage =RegisterPetAgePicker.ToString(),
-                    Petgender = RegisterPetGenderPicker.ToString(),
-                   
-                };
-
-               await App.MobileService.GetTable<USERPET>().InsertAsync(user);
-
-
-            }
-            else
-            {
-                await DisplayAlert("Error", "passwords don't match", "OK");
-            }
+            SqlCommand sqlCmd = new SqlCommand("UserAdd", cnn);
+            sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
+            sqlCmd.Parameters.AddWithValue("@Username", usernameEntry.Text.Trim());   
+            sqlCmd.Parameters.AddWithValue("@Email", emailEntry.Text.Trim());
+            sqlCmd.Parameters.AddWithValue("@Phone", phoneEntry.Text.Trim());
+            sqlCmd.Parameters.AddWithValue("@UserLocation", RegisterCityPicker.SelectedItem.ToString());
+            sqlCmd.Parameters.AddWithValue("@Petname", petNameEntry.Text.Trim());
+            sqlCmd.Parameters.AddWithValue("@PetBreed", RegisterPetBreedPicker.SelectedItem.ToString());
+            sqlCmd.Parameters.AddWithValue("@Petage", RegisterPetAgePicker.SelectedItem.ToString());
+            sqlCmd.Parameters.AddWithValue("@Petgender", RegisterPetGenderPicker.SelectedItem.ToString());
+            sqlCmd.Parameters.AddWithValue("@Password", passwordEntry.Text.Trim());
+            sqlCmd.ExecuteNonQuery();
+            await DisplayAlert("Success", "Registeration Successful", "OK");
 
 
 

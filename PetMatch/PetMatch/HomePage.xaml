@@ -1,12 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PetMatch"
              x:Class="PetMatch.HomePage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Padding="10" Spacing="10">
+                <Grid Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Frame Padding="0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="https://petmatchstorage.blob.core.windows.net/petmatchcontainer/homepageiconbig1.png"/>
+                            <StackLayout Orientation="Vertical" Grid.Column="1" Padding="10">
+                                <Label  Text="Hello!"
+                                       HorizontalTextAlignment="Start" FontSize="Medium" TextColor="Black"/>
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <FormattedString.Spans>
+                                                <Span Text="You can find a match or a comfortable pet hotel for pet now!" FontSize="Small" TextColor="Black"/>
+                                            </FormattedString.Spans>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <BoxView Color="Gray" HorizontalOptions="Fill" HeightRequest="1"/>
+
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+
+
+                </Grid>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

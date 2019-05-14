@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace PetMatch.Model
 {
     class PETHOTELS
@@ -10,15 +11,15 @@ namespace PetMatch.Model
 
         public string PethotelName { get; set; }
 
-        public int PethotelDailyprice { get; set; }
+        public string PethotelDailyprice { get; set; }
 
-        public int PethotelPhone { get; set; }
+        public string PethotelPhone { get; set; }
 
         public string PethotelLocation { get; set; }
 
-       
+       public string PethotelDistrict { get; set; }
 
 
 
-    }
+}
 }

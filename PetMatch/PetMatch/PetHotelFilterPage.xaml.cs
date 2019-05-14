@@ -21,10 +21,10 @@ namespace PetMatch
         private void HotelPricePickerData()
         {
             var listHotelPrice = new List<String>();
-            listHotelPrice.Add("100-150 TL ");
-            listHotelPrice.Add("200-250 TL ");
-            listHotelPrice.Add("300-350 TL ");
-            listHotelPrice.Add(" +400 TL ");
+            listHotelPrice.Add("-100");
+            listHotelPrice.Add("100-200");
+            listHotelPrice.Add("200-300");
+            listHotelPrice.Add("300+");
             HotelPricePicker.ItemsSource = listHotelPrice;
 
         }
@@ -57,8 +57,11 @@ namespace PetMatch
 
  
 
+       
         private void FilterPetHotelButton_Clicked(object sender, EventArgs e)
         {
+            Navigation.PushModalAsync (new NavigationPage(new HotelListViewPage(HotelCityPicker.SelectedItem.ToString(), HotelPricePicker.SelectedItem.ToString()))); 
+           
 
         }
     }

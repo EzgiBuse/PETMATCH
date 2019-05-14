@@ -229,6 +229,7 @@ namespace PetMatch
 
         private void FilterPetButton_Clicked(object sender, EventArgs e)
         {
+            Navigation.PushModalAsync(new NavigationPage(new PetListViewPage(PetFilterGenderPicker.SelectedItem.ToString(), PetFilterBreedPicker.SelectedItem.ToString(), PetFilterCityPicker.SelectedItem.ToString())));
 
         }
     }

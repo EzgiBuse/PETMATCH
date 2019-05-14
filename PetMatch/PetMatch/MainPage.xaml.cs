@@ -1,54 +1,92 @@
 ﻿using PetMatch.Model;
 using System;
 using System.Linq;
+using System.Net.Http;
+using System.Data;
 using Xamarin.Forms;
+using System.Data.SqlClient;
 
 namespace PetMatch
 {
     public partial class MainPage : ContentPage
     {
+        public  static string UpdateS;
+
         public MainPage()
         {
             InitializeComponent();
+          //  var assembly = typeof(MainPage);
+        //    iconImage.Source = ImageSource.FromResource("PetMatch.Android.Assets.Images.petmatchicon.png", assembly);
+
         }
 
         private async void LoginButton_Clicked(object sender, EventArgs e)
         {
+          
+
+
+
+
+
+            string connectionString;
+            SqlConnection cnn;
+            SqlCommand command;
+            SqlDataReader datareader;
+            
+            string sql, sql2, output = "";
+            sql = "select * from dbo.USERPET where Email= '" + emailEntry.Text.Trim() + "' and Password = '" + passwordEntry.Text.Trim() +"'";
+            connectionString = @"Data Source=petmatch.database.windows.net,1433;Initial Catalog=PetMatch_Database;User ID=PETMATCHADMIN;Password=EzgiDilara97";
+
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            command = new SqlCommand(sql, cnn);
+
+            datareader = command.ExecuteReader();
             
 
-             var user = (await App.MobileService.GetTable<USERPET>().Where(u => u.Email == emailEntry.Text).ToListAsync()).FirstOrDefault();
-
-              bool isEmailEmpty = string.IsNullOrEmpty(emailEntry.Text);
-              bool isPasswordEmpty = string.IsNullOrEmpty(passwordEntry.Text);
-
-              if(isEmailEmpty || isPasswordEmpty)
+            while (datareader.Read())
               {
-                  await DisplayAlert("Error","Email or password is empty", "OK");
+              if(output!= null){
+                    
+                   // string matchingusername, matchingpetname;
+                    UpdateS = emailEntry.Text.Trim();
+                  /*  sql2 = "select Username from dbo.USERPET where Email= '" + emailEntry.Text.Trim() + "'";
+                    connectionString = @"Data Source=petmatch.database.windows.net,1433;Initial Catalog=PetMatch_Database;User ID=PETMATCHADMIN;Password=EzgiDilara97";
+
+                    cnn = new SqlConnection(connectionString);
+                    cnn.Open();
+                    command = new SqlCommand(sql2, cnn);
+                    datareader = command.ExecuteReader();
+                    string matchingusername, matchingpetname;
+                    while (datareader.Read())
+                    {
+                        matchingusername=datareader["Username"].ToString();
+                      //  matchingpetname = datareader["Petname"].ToString();
+
+                    }
+
+    */
 
 
+
+
+                    await Navigation.PushAsync(new TabControlPage());
+                }
+                else if(output == null)
+                {
+                   await DisplayAlert("Error", "User not found", "OK");
+                }
+                 
               }
-              else
-              {
-                  user = (await App.MobileService.GetTable<USERPET>().Where(u => u.Email == emailEntry.Text).ToListAsync()).FirstOrDefault();
 
-                  if(user!= null)
-                  {
-                      if(user.Password == passwordEntry.Text)
-                      {
-                          await Navigation.PushAsync(new HomePage());
-                      }
-                      else
-                      {
-                          await DisplayAlert("Error", "Incorrect email or password", "OK");
-                      }
+           
+              cnn.Close();
 
-                  }
-
-              }
+             
 
 
 
-      
+
         }
 
 
